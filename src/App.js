@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Container, AppBar, Toolbar, Typography, Box } from '@mui/material';
+import Weather from './components/Weather';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">Weather App</Typography>
+        </Toolbar>
+      </AppBar>
+      <Container maxWidth="md" style={{ marginTop: 30, marginBottom: 40 }}>
+        <Weather />
+      </Container>
+      <footer style={{ textAlign: 'center', backgroundColor: '#f5f5f5', padding: '10px 0', position: 'fixed', bottom: 0, width: '100%' }}>
+        <Typography variant="body2">
+          Weather data provided by OpenWeatherMap
+        </Typography>
+      </footer>
+    </Box>
   );
 }
 
